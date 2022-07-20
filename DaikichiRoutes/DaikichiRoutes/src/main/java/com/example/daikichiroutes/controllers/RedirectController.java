@@ -10,8 +10,8 @@ public class RedirectController {
 //    public void redirect() {
 //        return redirect(HomeController.welcome());
 //    }
-    @RequestMapping("/")
-    public String index(@RequestParam(value="q", required = false) String searchQuery) {
-        return "You searched for: " + searchQuery;
-}
+//    @RequestMapping("/")
+//    public String index(@RequestParam(value="q", required = false) String searchQuery) {
+//        return "You searched for: " + searchQuery;
+//}
 }
