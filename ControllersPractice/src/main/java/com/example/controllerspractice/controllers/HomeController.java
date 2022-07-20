@@ -1,26 +1,23 @@
 package com.example.controllerspractice.controllers;
-
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-@RequestMapping("/greeting")
+import org.springframework.stereotype.Controller;
+// New import needed!
+import org.springframework.ui.Model;
+@Controller
 public class HomeController {
+    @RequestMapping("/")
+    public String index(Model model) {
 
-    @RequestMapping("")
-    public String hello() {
-        return "Hello Steven Segal.";
+        String firstName = "Ada";
+        String lastName = "Lovelace";
+        String email = "ones@zeroes.com";
+        Integer age = 160;
+
+        model.addAttribute("firstName", firstName);
+        model.addAttribute("lastName", lastName);
+        model.addAttribute("email", email);
+        model.addAttribute("age", age);
+        return "/WEB-INF/index.jsp";
     }
-
-    @RequestMapping(value="/hello", method= RequestMethod.GET)
-    public String helloWorld() {
-        return "Hello world! What route did you use to access me?";
-    }
-
-    @RequestMapping("/goodbye")
-    public String world() {
-        return "Goodbye world!";
-    }
-
 }
+
